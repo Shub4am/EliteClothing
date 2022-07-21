@@ -8,13 +8,14 @@ const NavBar = () => {
     <Fragment>
       <div className="navigation">
         <Link className="logoContainer" to="/">
-          <div>
-            <CrwnLogo className="logo" />
-          </div>
+          <CrwnLogo className="logo" />
         </Link>
         <div className="navLinksContainer">
           <Link className="navLink" to="/shop">
-            Shop
+            SHOP
+          </Link>
+          <Link className="navLink" to="/signIn">
+            SIGN IN
           </Link>
         </div>
       </div>
