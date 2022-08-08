@@ -1,7 +1,10 @@
 import { USER_ACTION_TYPES } from './userTypes';
+
+export const INITIAL_STATE = {
+  currentUser: null,
+};
+
 export const userReducer = (state = INITIAL_STATE, action) => {
-  console.log('dispatched');
-  console.log(action);
   const { type, payload } = action;
 
   switch (type) {
@@ -13,7 +16,4 @@ export const userReducer = (state = INITIAL_STATE, action) => {
     default:
       return state;
   }
-};
-const INITIAL_STATE = {
-  currentUser: null,
 };
