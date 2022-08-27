@@ -3,13 +3,13 @@ import { Routes, Route } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import CategoriesPreview from '../CategoriesPreview';
 import Category from '../Category';
-import { fetchCategoriesAsync } from '../../store/categories/categoriesAction';
+import { fetchCategoriesStart } from '../../store/categories/categoriesAction';
 
 const Shop = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchCategoriesAsync());
+    dispatch(fetchCategoriesStart());
     // eslint-disable-next-line
   }, []);
 
