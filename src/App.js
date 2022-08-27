@@ -3,23 +3,19 @@ import { useDispatch } from 'react-redux';
 
 import { Routes, Route } from 'react-router-dom';
 
-import {
-  onAuthStateChangedListener,
-  createUserDocumentFromAuth,
-  getCurrentUser,
-} from './utils/firebase';
 import Home from './pages/Home';
 import NavBar from './pages/Navigation';
 import Authentication from './pages/Authentication';
 import Shop from './pages/Shop';
 import Checkout from './pages/Checkout';
-import { setCurrentUser } from './store/user/userAction';
+import { checkUserSession } from './store/user/userAction';
 
 const App = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    getCurrentUser().then((user) => console.log(user));
+    dispatch(checkUserSession());
+    // eslint-disable-next-line
   }, []);
 
   return (
