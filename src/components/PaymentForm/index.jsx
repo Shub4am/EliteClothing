@@ -20,15 +20,13 @@ const PaymentForm = () => {
     }
 
     setIsProcessingPayment(true);
-    const response = await fetch('/.netlify/functions/createPaymentIntent', {
-      method: 'post',
+    const response = await fetch('/.netlify/functions/create-payment-intent', {
+      method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({ amount: amount * 100 }),
-    }).then((res) => {
-      return res.json();
-    });
+    }).then((res) => res.json());
 
     const {
       paymentIntent: { client_secret },
@@ -55,12 +53,13 @@ const PaymentForm = () => {
 
   return (
     <PaymentFormContainer>
-      <FormContainer onSubmit={paymentHandler}>
+      <FormContainer>
         <h2> Credit Card Payment:</h2>
         <CardElement />
         <PaymentButton
           isLoading={isProcessingPayment}
           buttonType={BUTTON_TYPE_CLASSES.inverted}
+          onClick={paymentHandler}
         >
           Pay Now
         </PaymentButton>
