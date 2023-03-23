@@ -5,7 +5,7 @@ import Button from '../Button';
 import CartItem from '../CartItem';
 import { selectCartItems } from '../../store/cart/cartSelector';
 
-import { CartDropdownContainer, CartItems, EmptyMessage } from './styles.jsx';
+import { CartDropdownContainer, CartItems, EmptyMessage } from './styles';
 
 const CartDropdown = () => {
   const cartItems = useSelector(selectCartItems);
@@ -19,9 +19,7 @@ const CartDropdown = () => {
     <CartDropdownContainer>
       <CartItems>
         {cartItems.length ? (
-          cartItems.map((cartItem) => (
-            <CartItem key={cartItem.id} cartItem={cartItem} />
-          ))
+          cartItems.map((item) => <CartItem key={item.id} cartItem={item} />)
         ) : (
           <EmptyMessage>Your cart is empty</EmptyMessage>
         )}

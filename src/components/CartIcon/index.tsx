@@ -7,7 +7,7 @@ import {
 } from '../../store/cart/cartSelector';
 import { setIsCartOpen } from '../../store/cart/cartAction';
 
-import { CartIconContainer, ItemCount, ShoppingIcon } from './styles.jsx';
+import { CartIconContainer, ItemCount, ShoppingIcon } from './styles';
 
 const CartIcon = () => {
   const dispatch = useDispatch();

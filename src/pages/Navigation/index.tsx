@@ -13,7 +13,7 @@ import {
   LogoContainer,
   NavLink,
   NavLinks,
-} from './styles.jsx';
+} from './styles';
 import { selectCurrentUser } from '../../store/user/userSelector';
 
 const NavBar = () => {

@@ -4,6 +4,7 @@ import {
   selectCartItems,
   selectCartTotal,
 } from '../../store/cart/cartSelector';
+
 import CheckoutItem from '../../components/CheckoutItem';
 import PaymentForm from '../../components/PaymentForm';
 

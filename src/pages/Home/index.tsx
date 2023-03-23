@@ -5,8 +5,8 @@ import Directory from '../../components/Directory';
 const Home = () => {
   return (
     <div>
-      <Outlet />
       <Directory />
+      <Outlet />
     </div>
   );
 };
