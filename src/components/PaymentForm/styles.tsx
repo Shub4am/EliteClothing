@@ -7,6 +7,9 @@ export const PaymentFormContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  @media screen and (max-width: 400px) {
+    font-size: 12px;
+  }
 `;
 
 export const FormContainer = styled.form`
@@ -17,4 +20,7 @@ export const FormContainer = styled.form`
 export const PaymentButton = styled(Button)`
   margin-left: auto;
   margin-top: 30px;
+  @media screen and (max-width: 400px) {
+    margin-left: 150px;
+  }
 `;
