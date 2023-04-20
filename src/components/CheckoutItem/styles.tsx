@@ -10,7 +10,10 @@ export const CheckoutItemContainer = styled.div`
   align-items: center;
 
   @media screen and (max-width: 800px) {
-    font-size: 12px;
+    font-size: 16px;
+    width: 350px;
+    padding: 15px 8px;
+    align-items: center;
   }
 `;
 
@@ -54,6 +57,5 @@ export const RemoveButton = styled.div`
   cursor: pointer;
 
   @media screen and (max-width: 400px) {
-    display: none;
   }
 `;

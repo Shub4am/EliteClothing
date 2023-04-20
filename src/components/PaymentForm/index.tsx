@@ -8,7 +8,12 @@ import { selectCurrentUser } from '../../store/user/userSelector';
 
 import { BUTTON_TYPE_CLASSES } from '../Button';
 
-import { PaymentFormContainer, FormContainer, PaymentButton } from './styles';
+import {
+  PaymentFormContainer,
+  FormContainer,
+  PaymentButton,
+  StripeCardText,
+} from './styles';
 
 const ifValidCardElement = (
   card: StripeCardElement | null
@@ -31,7 +36,7 @@ const PaymentForm = () => {
     setIsProcessingPayment(true);
 
     const response = await fetch('/.netlify/functions/create-payment-intent', {
-      method: 'POST',
+      method: 'post',
       headers: {
         'Content-Type': 'application/json',
       },
@@ -66,18 +71,26 @@ const PaymentForm = () => {
   };
 
   return (
-    <PaymentFormContainer>
-      <FormContainer onSubmit={paymentHandler}>
-        <h2> Credit Card Payment:</h2>
-        <CardElement />
-        <PaymentButton
-          isLoading={isProcessingPayment}
-          buttonType={BUTTON_TYPE_CLASSES.inverted}
-        >
-          Pay Now
-        </PaymentButton>
-      </FormContainer>
-    </PaymentFormContainer>
+    <>
+      <PaymentFormContainer>
+        <FormContainer onSubmit={paymentHandler}>
+          <h2> Credit Card Payment:</h2>
+          <CardElement />
+          <PaymentButton
+            isLoading={isProcessingPayment}
+            buttonType={BUTTON_TYPE_CLASSES.inverted}
+          >
+            Pay Now
+          </PaymentButton>
+        </FormContainer>
+      </PaymentFormContainer>
+      <StripeCardText>
+        <p>
+          *Use the following for testing: * VISA: 4242 4242 4242 4242 <br />
+          Exp: Any Future Date, CVV: Any 3 Digits
+        </p>
+      </StripeCardText>
+    </>
   );
 };
 
